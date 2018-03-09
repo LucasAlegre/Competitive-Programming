@@ -1,39 +1,48 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <stdio.h>
+
 using namespace std;
-int cycle(int x, vector<int> &con){
-    int c = 1;
-    
+
+long cycle(long x, vector<long> &con){
+    long c = 1;
+    long aux = x;
     if(con[x] == 0){
         while(x != 1){
             if (x % 2 != 0) x = 3*x+1;
             else x = x/2;
             c++;
         }
-        con[x] = c;
-        
+        con[aux] = c;
+
         return c;
     }
     else return con[x];
 
-}   
+}
 
 int main(){
-    vector<int> con(10000,0);
-    int i, j;
-    vector<int> v;
-    while(cin >> i >> j){
+    vector<long> con(1000002,0);
+    long i, j, aux;
+    vector<long> v;
+    while(scanf("%ld %ld", &i, &j)!=EOF){
+      	if(i > j){
+            aux = i;
+            i = j;
+            j = aux;
+            
+        }
         v.clear();
-        con= vector<int>(10000,0);
-        for(int c=i; c<=j;c++){
+        
+        for(long c=i; c<=j;c++){
             v.push_back(cycle(c, con));
         }
         cout <<i<<" "<< j << " " <<  *max_element(v.begin(), v.end())<<endl;
-        
+
     }
 
-    
+
 
 
     return 0;
