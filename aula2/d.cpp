@@ -30,17 +30,17 @@ int main(){
                     aux = s.top();s.pop();
                     if(aux != x) fs = false;
                 }
-		else fs = false;
+		        else fs = false;
                 if(fq && q.size()!= 0){
                	     aux = q.front();q.pop();
                	     if(aux != x) fq = false;
-		}
-		else fq = false;
+	        	}
+		        else fq = false;
                 if(fpq && pq.size()!= 0){
                      aux = pq.top();pq.pop();
                      if(aux != x) fpq = false;
-		}
-		else fpq = false;
+		        }
+		        else fpq = false;
             }   
         }
         if(fq && !fs && !fpq)
@@ -53,8 +53,6 @@ int main(){
             cout << "impossible" << endl;
         else
             cout << "not sure" << endl;
-
-
 
     }
 
