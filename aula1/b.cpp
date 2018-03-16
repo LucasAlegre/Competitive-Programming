@@ -24,18 +24,20 @@ long cycle(long x, vector<long> &con){
 
 int main(){
     vector<long> con(1000002,0);
-    long i, j, aux;
+    long i, j, ai, aj;
     vector<long> v;
     while(scanf("%ld %ld", &i, &j)!=EOF){
       	if(i > j){
-            aux = i;
-            i = j;
-            j = aux;
-            
+            ai = j;
+            aj = i;
         }
+	else{
+	    ai = i;
+            aj = j;
+	}
         v.clear();
         
-        for(long c=i; c<=j;c++){
+        for(long c=ai; c<=aj;c++){
             v.push_back(cycle(c, con));
         }
         cout <<i<<" "<< j << " " <<  *max_element(v.begin(), v.end())<<endl;
