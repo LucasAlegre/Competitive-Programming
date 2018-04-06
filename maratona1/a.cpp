@@ -26,7 +26,6 @@ bool check(vector<pii> &carros)
 
     for(int i=carros.size()-2;i>=0;i--){
         if(carros[i].second > ci && si > carros[i].second)
-            
             return false;
        
         if(carros[i].second > ci)
