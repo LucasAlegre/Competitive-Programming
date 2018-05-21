@@ -23,7 +23,6 @@ if __name__ == '__main__':
     for _ in range(n):
         c = 0
         p = input()
-        pal = True
         while not palindrome(p):
             pr = p[::-1]
             p = str(int(p) + int(pr))
