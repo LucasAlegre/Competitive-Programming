@@ -31,21 +31,18 @@ int main(){
             ai = j;
             aj = i;
         }
-	else{
-	    ai = i;
+	    else{
+	        ai = i;
             aj = j;
-	}
+	    }
         v.clear();
         
         for(long c=ai; c<=aj;c++){
             v.push_back(cycle(c, con));
         }
-        cout <<i<<" "<< j << " " <<  *max_element(v.begin(), v.end())<<endl;
+        cout <<i<<" "<< j << " " <<  *max_element(v.begin(), v.end()) << endl;
 
     }
-
-
-
 
     return 0;
 }
